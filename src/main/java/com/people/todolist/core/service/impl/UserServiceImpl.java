@@ -10,7 +10,6 @@ import com.people.todolist.infrastructure.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -41,20 +40,6 @@ public class UserServiceImpl implements UserService {
         Assert.notEmpty(userList, "No user found");
         return userList;
     }
-
-
-//    @Override
-//    public List<UserModel> getUsersByFilter( String searchString, FilterRequest filter) {
-//
-//        List<UserModel> userList= (List<UserModel>) userRepository.findAll(Specification.where(userSpecification.hasString(searchString)
-//                .or(userSpecification.hasGender(searchString)))
-//                .and(userSpecification.getFilter(filter)))
-//                .stream()
-//                .map(x -> modelMapper.map(x, UserModel.class))
-//                .collect(Collectors.toList());
-//
-//        return userList;
-//    }
 
 
     /**
